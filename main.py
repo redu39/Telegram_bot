@@ -8,8 +8,10 @@ from aiogram.fsm.context import FSMContext
 from aiogram.exceptions import TelegramNetworkError
 
 # ================= CONFIG =================
-TOKEN = "8593315681:AAFlY9A5VrlVun6CnWcZol7Px9cqjKSKgM0"
-ADMIN_ID = 5001039092
+import os
+
+TOKEN = os.getenv("TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID", "5001039092"))
 
 db = sqlite3.connect("raftaar_final_master.db", check_same_thread=False)
 cur = db.cursor()
